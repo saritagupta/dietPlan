@@ -1,0 +1,684 @@
+/* Global Styles */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #8BC34A;
+    --accent-color: #FF9800;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f5f5f5;
+    padding-bottom: 2rem;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-position: inside;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+}
+
+.nutrition-info {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.nutrition-info ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nutrition-info li {
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Meal Plan Section */
+.meal-plan {
+    padding-bottom: 1rem;
+}
+
+.day {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.day h3 {
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+}
+
+.meal {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+.meal h4 {
+    display: flex;
+    align-items: center;
+}
+
+.meal h4::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.breakfast h4::before {
+    background-color: #FFC107;
+}
+
+.lunch h4::before {
+    background-color: #2196F3;
+}
+
+.snack h4::before {
+    background-color: #9C27B0;
+}
+
+.dinner h4::before {
+    background-color: #F44336;
+}
+
+/* Shopping List Section */
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.list-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.list-column h3 {
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* Budget Grocery List Styles */
+.budget-grocery-list {
+    background-color: #edf7ed;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.budget-intro {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.store-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.store-tab {
+    padding: 0.75rem 1.25rem;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.store-tab:hover {
+    background-color: #e0e0e0;
+}
+
+.store-tab.active {
+    background-color: #27ae60;
+    color: white;
+}
+
+.store-content {
+    display: none;
+}
+
+.store-content.active {
+    display: block;
+}
+
+.price-comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.price-comparison th, 
+.price-comparison td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-comparison th {
+    background-color: #f1f1f1;
+    font-weight: 600;
+}
+
+.price-comparison tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.price-comparison tr:hover {
+    background-color: #f1f1f1;
+}
+
+.price-comparison tfoot tr {
+    background-color: #e8f5e9;
+    font-weight: 600;
+}
+
+.budget-tips {
+    background-color: #f1f8e9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.budget-tips h4 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.budget-tips ul {
+    padding-left: 1.5rem;
+}
+
+.budget-tips li {
+    margin-bottom: 0.5rem;
+}
+
+.budget-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.budget-list-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.budget-list-column h4 {
+    color: #2c3e50;
+    border-bottom: 2px solid #27ae60;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.budget-list-column ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.budget-list-column li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #ddd;
+    font-size: 0.95rem;
+}
+
+.budget-list-column li:last-child {
+    border-bottom: none;
+}
+
+/* Aldi Order Styles */
+.aldi-order-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.aldi-order-info {
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.aldi-order-info p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Store Selection Styles */
+.store-selection-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.store-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.store-dropdown {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.delivery-method {
+    display: flex;
+    gap: 20px;
+}
+
+.delivery-method label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.store-info {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+}
+
+.store-direct {
+    display: none;
+}
+
+.store-direct.active {
+    display: block;
+}
+
+.instacart-link, .external-store-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FF8200;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.instacart-link:hover, .external-store-link:hover {
+    background-color: #e67300;
+}
+
+.instacart-logo {
+    height: 20px;
+    width: auto;
+}
+
+.external-store-link {
+    background-color: #0071dc;
+}
+
+.external-store-link:hover {
+    background-color: #005bb1;
+}
+
+.delivery-benefits {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.benefit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.benefit-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.aldi-order-form {
+    max-width: 100%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.form-section h4 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group.full-width {
+    flex-basis: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.cart-table input.item-quantity {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+}
+
+.cart-table tfoot tr:last-child {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.total-row {
+    background-color: #f2f2f2;
+}
+
+.add-more-btn {
+    background-color: transparent;
+    border: 1px dashed #4CAF50;
+    color: #4CAF50;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.add-more-btn:hover {
+    background-color: #e8f5e9;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.place-order-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.place-order-btn:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.order-note {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.aldi-order-btn {
+    background-color: #0051ba;
+    color: white;
+}
+
+.aldi-order-btn:hover {
+    background-color: #003d8e;
+}
+
+.aldi-order-btn.active {
+    background-color: #0051ba;
+}
+
+/* Tips Section */
+.tips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.tip {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nutrition-info ul {
+        flex-direction: column;
+    }
+    
+    .list-container, .tips-container {
+        flex-direction: column;
+    }
+    
+    .day {
+        padding: 1rem;
+    }
+    
+    .day h3 {
+        margin: -1rem -1rem 1rem -1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    header, footer {
+        background-color: white;
+        color: var(--text-color);
+    }
+    
+    section {
+        box-shadow: none;
+        margin-bottom: 1rem;
+        page-break-inside: avoid;
+    }
+    
+    .day {
+        page-break-inside: avoid;
+    }
+}
